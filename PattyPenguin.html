@@ -6,7 +6,7 @@
     <title>Penguin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-
+<p><textarea>Click anywhere to hear my happy dance music</textarea></p>
   <body>
     <div class="left-mountain"></div>
     <div class="back-mountain"></div>
@@ -40,5 +40,28 @@
     </div>
 
     <div class="ground"></div>
+    <audio>
+      <source src="mpeg-noise-92527.mp3" type="audio/mpeg">
+      <source src="mpeg-noise-92527.ogg" type="audio/ogg">
+      Your browser does not support the <code>audio/</code> element.
+  </audio>
+  <script>
+     var audio;
+     window.addEventListener('load', init, false);
+     window.addEventListener('click', playPause, false);
+     function playPause() {
+      if (audio.paused) {
+          audio.play();
+      } else {
+          audio.pause();
+      }
+     }
+      function init() {
+          audio = document.getElementsByTagName ('audio') [0];
+          audio.play();
+      }
+  </script>
+  
   </body>
+  
 </html>
